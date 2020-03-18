@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+ <div class="container">
+    <div class="row mt-1">
+        <div class="col">
+            <div class="card p-1">
+                <h2>{{ noticia.titulo }}</h2>
+                <b>{{ noticia.descripcion }}</b>
+                {{ noticia.texto }}
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card p-1">
+                <img src="{% static 'core/img/userimg.png' %}" class="w-100 rounded-circle border border-info" alt="">
+                <p>Publicado el {{ noticia.fecha_publicacion }}</p>
+                <p>Escrito por <a href="#">{{ noticia.autor }}</a></p>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% endblock contenido %}

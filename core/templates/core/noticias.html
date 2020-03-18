@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<div class="container">
+    {% for noticias in page_obj %}
+    <div class="card mt-1 p-1">
+        <div class="row">
+            <div class="col-3">
+                <img src="{% static 'core/img/lista-de-utiles.jpg' %}" class="w-100 rounded border border-primary" alt="">
+            </div>
+            <div class="col">
+                <a href="{% url 'postNoticia' noticias.id %}"><p class="card-title">{{ noticias.titulo }}</p></a>
+                <p class="card-text">{{ noticias.descripcion }}</p>
+                <p class="card-text"><small class="text-muted">Autor <a href="#">{{ noticias.autor }}</a></small></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <ul class="pagination mt-1 d-flex justify-content-center">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Volver</a>
+        </li>
+        {% endif %}
+
+        {% for p in paginator.page_range %}
+            <li class="page-item {% if page_obj == p %} active {% endif %}">
+                <a href="?page={{ p }}" class="page-link">{{ p }}</a>
+            </li>
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <li class="page-item">
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link">Siguiente</a>
+        </li>
+        {% endif %}
+    </ul>
+
+</div>
+
+{% endblock contenido %}

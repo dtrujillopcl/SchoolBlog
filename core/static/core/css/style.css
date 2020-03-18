@@ -1,0 +1,54 @@
+body{
+    background: rgb(255, 217, 0);
+}
+
+header{
+    background: rgb(95, 95, 95);
+}
+
+.logonav{
+    width: 100px;
+}
+
+.headerlink{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.headerlink:hover{
+    text-decoration: none;
+    color: rgb(134, 134, 134);
+}
+
+.btnchange{
+    color: rgb(105, 105, 105);
+}
+
+.imgnoticia{
+    width: 250px;
+}
+
+.lmlink:hover{
+    text-decoration: none;
+}
+
+.logofooter{
+    width: 100px;
+}
+
+.bgheader{
+    background: rgb(20, 20, 20);
+}
+
+.bgheader a{
+    color: rgb(255, 255, 255);
+}
+
+.bgheader a:hover{
+    text-decoration: none;
+    color: rgb(175, 175, 175);
+}
+
+.sliderbg{
+    background: rgba(0, 0, 0, 0.5);
+}
